@@ -1,6 +1,6 @@
 # USB101D Lightweight SDK
 
-USB101D is a 4-channel USB data acquisition card supporting up to **100 kS/s**. This repository ships a **lightweight SDK** together with a **C# demo project**, offering a streamlined, unified interface for both x86 and x64 applications.
+USB101D is a 4-channel USB data acquisition card supporting up to **1 MS/s**. This repository ships a **lightweight SDK** together with a **C# demo project**, offering a streamlined, unified interface for both x86 and x64 applications.
 
 > **Note** Ensure that the official Altai/ART USB101D driver is installed and the device appears in *Device Manager* before using the SDK.
 
