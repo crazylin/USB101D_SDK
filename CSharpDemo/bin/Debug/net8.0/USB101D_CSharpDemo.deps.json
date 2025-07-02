@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "USB101D_CSharpDemo/1.0.0": {
+        "runtime": {
+          "USB101D_CSharpDemo.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "USB101D_CSharpDemo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
