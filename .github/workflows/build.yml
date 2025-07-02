@@ -1,0 +1,42 @@
+name: Build & Release SDK
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      VSWHERE_PATH: "C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\vswhere.exe"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build SDK (x86 & x64)
+        shell: powershell
+        run: |
+          .\build_sdk.bat
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: usb101d_sdk
+          path: |
+            output/x86/**
+            output/x64/**
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: false
+          generate_release_notes: true
+          files: |
+            output/x86/**
+            output/x64/** 
